@@ -49,7 +49,7 @@ export class AppComponent {
 
 function Request(http, seconds) {
   this.pending = true;
-  http.get(`http://www.fakeresponse.com/api/?sleep=${+seconds}`)
+  http.get(`//www.fakeresponse.com/api/?sleep=${+seconds}`)
     .subscribe(a => {
       this.pending = false;
     });

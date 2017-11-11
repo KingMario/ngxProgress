@@ -40,5 +40,9 @@ export function loaderFactory(loader: any): any {
     return loader();
   }
 
+  if (loader && loader.loaderProvider) {
+    return loader.loaderProvider();
+  }
+  
   return loader;
 }
