@@ -1,0 +1,57 @@
+{
+  "name": "ngxProgress",
+  "version": "1.0.0",
+  "description": "ngxProgress",
+  "author": "Shlomi Levi <wizardnet972@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wizardnet972/ngxProgress/issues"
+  },
+  "homepage": "https://github.com/wizardnet972/ngxProgress#readme",
+  "main": "bundles/index.umd.js",
+  "module": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "prepublishOnly": "ngc && npm run build",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wizardnet972/ngxProgress.git"
+  },
+  "keywords": [
+    "progress-bar",
+    "progress",
+    "loader",
+    "angular"
+  ],
+  "engines": {
+    "node": ">=6.9.5",
+    "npm": ">=4.0.0",
+    "yarn": ">=0.27.5 <2.0.0"
+  },
+  "peerDependencies": {
+    "@angular/core": "^4.0.0 || ^5.0.0-rc.2 || ^5.0.0",
+    "rxjs": "^5.0.0"
+  },
+  "dependencies": {
+    "@angular/compiler": "^4.0.0 || ^5.0.0-rc.2 || ^5.0.0",
+    "@angular/core": "^4.0.0 || ^5.0.0-rc.2 || ^5.0.0",
+    "@angular/platform-browser-dynamic": "^4.0.0 || ^5.0.0-rc.2 || ^5.0.0",
+    "@angular/platform-browser": "^4.0.0 || ^5.0.0-rc.2 || ^5.0.0",
+    "@angular/common": "^4.0.0 || ^5.0.0-rc.2 || ^5.0.0",
+    "rxjs": "^5.0.0"
+  },
+  "devDependencies": {
+    "@angular/compiler-cli": "^4.0.0 || ^5.0.0-rc.2 || ^5.0.0",
+    "@angular/language-service": "^4.0.0 || ^5.0.0-rc.2 || ^5.0.0",
+    "@types/node": "^6.0.90",
+    "codelyzer": "^4.0.1",
+    "tslint": "^5.8.0",
+    "tslint-loader": "^3.5.3",
+    "typescript": "^2.6.1",
+    "awesome-typescript-loader": "^3.3.0",
+    "ts-node": "~3.2.0"
+  }
+}
