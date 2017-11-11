@@ -6,10 +6,18 @@ Progress loader for Angular 4+ include interceptor. Can be integrate with 3rd pa
 
 Follow me [![twitter](https://img.shields.io/twitter/follow/wizardnet972.svg?style=social&label=%20wizardnet972)](https://twitter.com/wizardnet972) to be notified about new releases.
 
+### Features
+* Support Angular AoT.
+* Http interceptor
+* Buildin Loader
+* Integrate with 3rd parties javascript library, like nProgress and more.
+* Support initial buffer.
+
 **Why you should use buffer option?**
 > Sometimes you have many http requests. 
 Some of those requests are may taking a less then one second.
 So you may consider to show the indicator after three seconds, The buffer option allow you to do that.
+**Buffer is zero by default**
 
 ## Installation
 
