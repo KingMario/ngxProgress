@@ -3,6 +3,7 @@ src
 webpack.config.js
 helpers.js
 tsconfig.json
+example-app
 
 **/.DS_Store
 nbproject
