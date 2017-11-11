@@ -4,22 +4,25 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-root',
   template: `
-    <h1>NgxProgress Example App</h1>
+    <h1>NgxProgress Example App with nProgress</h1>
+    <br>
     <p>
-      Set response time in seconds: <input type="number" value="seconds" ngModel="seconds" >
+     Sets the amount of time you would like the response to be delayed, in seconds.
+     <input type="number" value="seconds" [(ngModel)]="seconds" >
     </p>
-    <button (click)="long()">GET</button>
-    <strong *ngIf="pending">pending...</strong>
-    <pre *ngIf="response">
+    <button (click)="long()" class="btn btn-primary">GET</button>
+    <br><br>
+    <p *ngIf="pending" class="bg-info">pending...</p>
+    <div *ngIf="response">
       <hr/>
-      response: {{response | json}}
-    </pre>
+      <pre>response: {{response | json}}</pre>
+    </div>
   `,
   styles: []
 })
 export class AppComponent {
   title = 'app';
-  response;
+  response = null;
   seconds = 10;
   pending = false;
 
@@ -27,6 +30,7 @@ export class AppComponent {
 
   long() {
     this.pending = true;
+    this.response = null;
 
     this.http
       .get(`http://www.fakeresponse.com/api/?sleep=${+this.seconds}`)
