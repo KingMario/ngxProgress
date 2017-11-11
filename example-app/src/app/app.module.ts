@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
-import { NgxProgressModule, LoaderProvider } from '../nng'; // ../../src/index';
+import { NgxProgressModule, LoaderProvider } from 'ngxprogress';
 
 declare var NProgress;
 export function NProgressLoader(): LoaderProvider {
@@ -25,7 +25,7 @@ export function NProgressLoader(): LoaderProvider {
     FormsModule,
 
     // Default use:
-   // NgxProgressModule,
+    // NgxProgressModule,
 
     // OR!
     // You can use a custom 3rd party loader
