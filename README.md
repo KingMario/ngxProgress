@@ -50,8 +50,9 @@ export class AppModule {
 ## Example for custom 3rd party loader with angular/cli
 
 #### 1. Download [NProgress.js](http://ricostacruz.com/nprogress)
-- Download nProgress from CDN to `assets` folder: https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.css
-https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.js
+> Download nProgress from CDN to `assets` folder:
+- https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.css
+- https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.js
 
 #### 2. Import the files to the cli
 Import `nprogress.js` and `nprogress.css` to `.angular-cli.json`
@@ -78,6 +79,14 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxProgressModule } from 'ngxProgress';
+
+declare var NProgress;
+export function NProgressLoader(): LoaderProvider {
+  return {
+    start: NProgress.start,
+    stop: NProgress.done
+  };
+}
 
 @NgModule({
     imports: [
