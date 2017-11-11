@@ -1,10 +1,15 @@
 # Angular NgxProgress
 
-Progress loader for Angular 4+ include interceptor. Can be integrate with 3rd parties javascript library.
-
 > Please support this project by simply putting a Github star. Share this library with friends on Twitter and everywhere else you can.
 
+Progress loader for Angular 4+ include interceptor. Can be integrate with 3rd parties javascript library.
+
 Follow me [![twitter](https://img.shields.io/twitter/follow/wizardnet972.svg?style=social&label=%20wizardnet972)](https://twitter.com/wizardnet972) to be notified about new releases.
+
+**Why you should use buffer option?**
+> Sometimes you have many http requests. 
+Some of those requests are may taking a less then one second.
+So you may consider to show the indicator after three seconds, The buffer option allow you to do that.
 
 ## Installation
 

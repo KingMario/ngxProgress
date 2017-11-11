@@ -1,3 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
-body {padding:20px;}
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    padding: 20px;
+}
+
+footer ul li {
+    margin-bottom: 20px
+}
