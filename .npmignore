@@ -3,6 +3,8 @@ src
 webpack.config.js
 helpers.js
 tsconfig.json
+*.yml
+tslint.json
 
 **/.DS_Store
 nbproject
