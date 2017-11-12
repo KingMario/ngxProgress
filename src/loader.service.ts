@@ -9,7 +9,7 @@ export interface LoaderProvider {
 @Injectable()
 export class LoaderService implements LoaderProvider {
 
-    private instance;
+    private instance: any;
 
     constructor(
         private componentFactoryResolver: ComponentFactoryResolver,
