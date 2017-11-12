@@ -19,6 +19,12 @@ Some of those requests are may taking a less then one second.
 So you may consider to show the indicator after three seconds, The buffer option allow you to do that.
 **Buffer is zero by default**
 
+
+### Example
+
+[ngxProgress](https://wizardnet972.github.io/ngxProgress/)
+
+
 ## Installation
 
 ```sh
