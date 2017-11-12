@@ -58,7 +58,7 @@ import { NgxProgressModule } from 'ngxProgress';
     imports: [
         BrowserModule,
         HttpClientModule,
-        NgProgressbarModule,
+        NgxProgressModule,
     ],
     bootstrap: [AppComponent]
 })
@@ -114,7 +114,7 @@ export function NProgressLoader(): LoaderProvider {
 
 @NgModule({
     imports: [
-        NgProgressbarModule.forRoot({
+        NgxProgressModule.forRoot({
             loaderProvider: NProgressLoader,
             buffer: 3000 /* the miliseconds before the loader is appear */
         }),
