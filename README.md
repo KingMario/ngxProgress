@@ -19,6 +19,12 @@ Some of those requests are may taking a less then one second.
 So you may consider to show the indicator after three seconds, The buffer option allow you to do that.
 **Buffer is zero by default**
 
+
+### Example
+
+[ngxProgress](https://wizardnet972.github.io/ngxProgress/)
+
+
 ## Installation
 
 ```sh
@@ -52,7 +58,7 @@ import { NgxProgressModule } from 'ngxProgress';
     imports: [
         BrowserModule,
         HttpClientModule,
-        NgProgressbarModule,
+        NgxProgressModule,
     ],
     bootstrap: [AppComponent]
 })
@@ -108,7 +114,7 @@ export function NProgressLoader(): LoaderProvider {
 
 @NgModule({
     imports: [
-        NgProgressbarModule.forRoot({
+        NgxProgressModule.forRoot({
             loaderProvider: NProgressLoader,
             buffer: 3000 /* the miliseconds before the loader is appear */
         }),

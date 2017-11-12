@@ -13,7 +13,7 @@ module.exports = function (options, webpackOptions) {
             path: root('bundles'),
             filename: 'index.umd.js',
             libraryTarget: 'umd',
-            library: 'ngProgressbar'
+            library: 'NgxProgress'
         },
         resolve: {
             extensions: ['.ts', '.js']
