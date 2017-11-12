@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
   </div>
   <div class="jumbotron">
     <div class="container">
-      <p><small>nProgressJS Example</small></p>
+      <p><small>Basic Example</small></p>
       <h1>NgxProgress</h1>
       <p>
         Progress loader for Angular 4+ include interceptor.
