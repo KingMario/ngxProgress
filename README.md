@@ -91,24 +91,30 @@ Update your root Module for example app.module
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { NgxProgressModule } from 'ngxProgress';
+import { NgxProgressModule, LoaderProvider } from 'ngxProgress';
 
 declare var NProgress;
+
 export function NProgressLoader(): LoaderProvider {
   return {
-    start: NProgress.start,
-    stop: NProgress.done
+    start() {
+      NProgress.start();
+    },
+    stop() {
+      NProgress.done();
+    }
   };
 }
 
 @NgModule({
     imports: [
-        BrowserModule,
-        HttpClientModule,
         NgProgressbarModule.forRoot({
             loaderProvider: NProgressLoader,
             buffer: 3000 /* the miliseconds before the loader is appear */
         }),
+
+        BrowserModule,
+        HttpClientModule,
     ],
     bootstrap: [AppComponent]
 })

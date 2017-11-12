@@ -1,4 +1,4 @@
-import { NgModule, ModuleWithProviders, Optional, SkipSelf, InjectionToken } from '@angular/core';
+import { NgModule, ModuleWithProviders, Optional, SkipSelf, InjectionToken, Inject, Injector } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoaderService, LoaderProvider } from './loader.service';
@@ -6,6 +6,11 @@ import { NgxProgressBuffer, NgxProgressLoader } from './ngx-progress.tokens';
 import { NgxProgressInterceptor } from './ngx-progress.interceptor';
 
 const defaultBuffer = 0;
+
+export interface NxProviders {
+  loaderProvider?: () => LoaderProvider | null;
+  buffer?: number | null;
+}
 
 @NgModule({
   providers: [
@@ -16,14 +21,16 @@ const defaultBuffer = 0;
 })
 export class NgxProgressModule {
 
-  static forRoot({ loaderProvider = null, buffer = defaultBuffer }:
-   { loaderProvider?: any | null, buffer?: number }): ModuleWithProviders {
+  static forRoot(config: NxProviders): ModuleWithProviders {
+
     return {
       ngModule: NgxProgressModule,
       providers: [
-        { provide: NgxProgressBuffer, multi: false, useValue: buffer },
-        { provide: NgxProgressLoader, multi: false, useValue: loaderProvider },
-        loaderProvider && { provide: LoaderService, multi: false, useFactory: loaderFactory, deps: [NgxProgressLoader] }
+        LoaderService,
+        { provide: NgxProgressBuffer, multi: false, useValue: config.buffer },
+        config && config.loaderProvider && {
+          provide: LoaderService, multi: false, useFactory: config.loaderProvider
+        } || []
       ]
     };
   }
@@ -33,16 +40,4 @@ export class NgxProgressModule {
       throw new Error(`NgxProgressModule has already been loaded. Import Core modules in the AppModule only.`);
     }
   }
-}
-
-export function loaderFactory(loader: any): any {
-  if (typeof loader === 'function') {
-    return loader();
-  }
-
-  if (loader && loader.loaderProvider) {
-    return loader.loaderProvider();
-  }
-  
-  return loader;
 }

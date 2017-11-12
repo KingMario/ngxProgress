@@ -8,10 +8,15 @@ import { FormsModule } from '@angular/forms';
 import { NgxProgressModule, LoaderProvider } from 'ngxprogress';
 
 declare var NProgress;
+
 export function NProgressLoader(): LoaderProvider {
   return {
-    start: NProgress.start,
-    stop: NProgress.done
+    start() {
+      NProgress.start();
+    },
+    stop() {
+      NProgress.done();
+    }
   };
 }
 
@@ -20,10 +25,6 @@ export function NProgressLoader(): LoaderProvider {
     AppComponent
   ],
   imports: [
-    BrowserModule,
-    HttpClientModule,
-    FormsModule,
-
     // Default use:
     // NgxProgressModule,
 
@@ -33,6 +34,10 @@ export function NProgressLoader(): LoaderProvider {
       loaderProvider: NProgressLoader,
       buffer: 3000 /* this is optional */
     }),
+
+    BrowserModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

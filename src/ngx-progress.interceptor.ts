@@ -11,7 +11,7 @@ import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import { timer } from 'rxjs/Observable/timer';
 import { LoaderService } from './loader.service';
-import { NgxProgressBuffer } from './ngx-progress.tokens';
+import { NgxProgressBuffer, NgxProgressLoader } from './ngx-progress.tokens';
 
 @Injectable()
 export class NgxProgressInterceptor implements HttpInterceptor {
