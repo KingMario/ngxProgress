@@ -1,4 +1,5 @@
 example-app
+examples
 src
 webpack.config.js
 helpers.js
