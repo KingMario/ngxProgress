@@ -71,7 +71,7 @@ THE SOFTWARE.
 MIT
 MIT
 
-ngxprogress@1.0.3
+ngxprogress@1.0.4
 MIT
 MIT License
 

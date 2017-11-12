@@ -22,13 +22,12 @@ So you may consider to show the indicator after three seconds, The buffer option
 
 ### Example
 
-[ngxProgress](https://wizardnet972.github.io/ngxProgress/)
-
+[ngxProgress](https://wizardnet972.github.io/ngxProgress/) and Example folder in this repo.
 
 ## Installation
 
 ```sh
-npm install ngxProgress --save
+npm install ngxprogress --save
 ```
 
 ## For SystemJS
