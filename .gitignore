@@ -9,9 +9,11 @@ manifest.mf
 build.xml
 npm-debug.log
 *.js
+!helpers.js
 !config/*
 !karma.conf.js
 !webpack.config.js
+!nprogress.js
 *.map
 *.d.ts
 !make.js

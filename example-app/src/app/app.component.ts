@@ -9,9 +9,9 @@ import { HttpClient } from '@angular/common/http';
     <p class="lead">Progress loader for Angular 4+ include interceptor. Can be integrate with 3rd parties javascript library.</p>
   
     <hr>
-    <p> Sets the amount of time you would like the response to be delayed, in seconds.</p>
+    <p> Sets the amount of time you would like the response to be delayed, in miliseconds.</p>
     <div class="input-group">
-     <input id="seconds" type="number" value="seconds" [(ngModel)]="seconds" class="form-control">
+     <input id="miliseconds" type="number" value="miliseconds" [(ngModel)]="miliseconds" class="form-control">
      <button (click)="makeRequest()" class="btn btn-primary">Make Request</button>
     </div>
     <hr/>
@@ -32,24 +32,24 @@ import { HttpClient } from '@angular/common/http';
     .box { border:1px solid #000;height:100px;width:100px;display:inline-block; line-height:100px;text-align:center}
     .yellow { background-color:yellow;}
     .green { background-color:green;}
-    #seconds {width:100px;}
+    #miliseconds {width:100px;}
   `]
 })
 export class AppComponent {
-  seconds = 10;
+  miliseconds = 10000;
   requests = [];
 
   constructor(private http: HttpClient) {
   }
 
   makeRequest() {
-    this.requests.push(new Request(this.http, this.seconds));
+    this.requests.push(new Request(this.http, this.miliseconds));
   }
 }
 
-function Request(http, seconds) {
+function Request(http, miliseconds) {
   this.pending = true;
-  http.get(`//www.fakeresponse.com/api/?sleep=${+seconds}`)
+  http.get(`//httpstat.us/200?sleep=${+miliseconds}`)
     .subscribe(a => {
       this.pending = false;
     });
