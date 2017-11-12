@@ -4,15 +4,18 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoaderService, LoaderProvider } from './loader.service';
 import { NgxProgressBuffer, NgxProgressLoader } from './ngx-progress.tokens';
 import { NgxProgressInterceptor } from './ngx-progress.interceptor';
+import { LoaderComponent } from './loader.component';
 
 const defaultBuffer = 0;
 
-export interface NxProviders {
+export interface NxgProgressProviders {
   loaderProvider?: () => LoaderProvider | null;
   buffer?: number | null;
 }
 
 @NgModule({
+  declarations: [LoaderComponent],
+  entryComponents: [LoaderComponent],
   providers: [
     LoaderService,
     { provide: NgxProgressBuffer, multi: false, useValue: defaultBuffer },
@@ -21,7 +24,7 @@ export interface NxProviders {
 })
 export class NgxProgressModule {
 
-  static forRoot(config: NxProviders): ModuleWithProviders {
+  static forRoot(config: NxgProgressProviders): ModuleWithProviders {
 
     return {
       ngModule: NgxProgressModule,

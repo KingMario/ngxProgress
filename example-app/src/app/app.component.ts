@@ -5,9 +5,9 @@ import { HttpClient } from '@angular/common/http';
   selector: 'app-root',
   template: `
     <h1>Angular NgxProgress</h1>
-  
+
     <p class="lead">Progress loader for Angular 4+ include interceptor. Can be integrate with 3rd parties javascript library.</p>
-  
+
     <hr>
     <p> Sets the amount of time you would like the response to be delayed, in miliseconds.</p>
     <div class="input-group">
@@ -29,7 +29,7 @@ import { HttpClient } from '@angular/common/http';
   styles: [`
     h1 {padding:10px;margin:0 0 20px 0;}
     p {font-size:18px;}
-    .box { border:1px solid #000;height:100px;width:100px;display:inline-block; line-height:100px;text-align:center}
+    .box { border:1px dotted #666;height:100px;width:100px;display:inline-block; line-height:100px;text-align:center}
     .yellow { background-color:yellow;}
     .green { background-color:green;}
     #miliseconds {width:100px;}
